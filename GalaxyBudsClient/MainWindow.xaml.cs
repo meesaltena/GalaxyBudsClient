@@ -145,7 +145,7 @@ namespace GalaxyBudsClient
                 new SystemPage(), new SelfTestPage(), new SettingsPage(), new PopupSettingsPage(),
                 ConnectionLostPage, CustomTouchActionPage, DeviceSelectionPage, new SystemInfoPage(),
                 new WelcomePage(), UnsupportedFeaturePage, UpdatePage, UpdateProgressPage, new SystemCoredumpPage(),
-                new HotkeyPage(), new FirmwareSelectionPage(), new FirmwareTransferPage(), new SpatialTestPage(),
+                new HotkeyPage(), new FirmwareSelectionPage(), new FirmwareTransferPage(), new SpatialTestPage(), new SpatialUDPPage(),
                 new BixbyRemapPage(), new CrowdsourcingSettingsPage(), new BudsAppDetectedPage(), new TouchpadGesturePage(),
                 new NoiseProAmbientPage());
 
@@ -509,7 +509,8 @@ namespace GalaxyBudsClient
                     (sender, args) => Pager.SwitchPage(AbstractPage.Pages.Settings),
                 [Loc.Resolve("optionsmenu_refresh")] = async (sender, args) =>
                     await BluetoothImpl.Instance.SendRequestAsync(SPPMessage.MessageIds.DEBUG_GET_ALL_DATA),
-               
+                [Loc.Resolve("system_spatial_udp")] =
+                    (sender, args) => Pager.SwitchPage(AbstractPage.Pages.SpatialUDPPage),
                 [Loc.Resolve("optionsmenu_deregister")] = (sender, args) => BluetoothImpl.Instance.UnregisterDevice()
                     .ContinueWith((_) => Pager.SwitchPage(AbstractPage.Pages.Welcome))
             };

@@ -22,7 +22,7 @@ namespace GalaxyBudsClient.Interface.Pages
 		public override Pages PageType => Pages.Welcome;
 
 		private readonly SwitchDetailListItem _darkMode;
-		private readonly Border _locale;
+		private readonly Avalonia.Controls.Border _locale;
 
 		private ContextMenu? _localeMenu;
 
@@ -94,7 +94,7 @@ namespace GalaxyBudsClient.Interface.Pages
 					Log.Warning("WelcomePage.BudsAppDetected: " + exception);
 				}
 			}
-		}
+        }
 		
 		private void Next_OnPointerPressed(object? sender, PointerPressedEventArgs e)
 		{

@@ -23,6 +23,7 @@ namespace GalaxyBudsClient.Interface.Pages
             SystemInfo,
             SystemCoredump,
             SpatialTest,
+            SpatialUDPPage,
             Credits,
             SelfTest,
             FactoryReset,
